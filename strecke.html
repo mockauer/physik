@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Strecke</title>
+<script type="text/javascript">
+//Gesucht Zeit und Gegeben Strecke
+function ZeitErgebnis (Strecke) {
+	//Berechnen des Ergebnisses
+  var ZwErgebnisZeit = Math.sqrt((2*parseInt(Strecke)) / 9.81);
+  //Runden auf 3 Stellen nachdem Komma
+  var Ergebnis=ZwErgebnisZeit.toFixed(3);
+  //Wertübergabe
+  return Ergebnis;
+}
+
+function SchreibeErgebnis (Ergebnis) {
+	//Wert wird übernommen und in Dokumentenfeld übernommen
+  var Wert = ZeitErgebnis(Ergebnis);
+  document.Zeit.Ergebnisfeldt.value = Wert;
+}
+//Gesucht Geschwindigkeit und Gegeben Zeit
+function ZeitErgebnis2 (Zeit) {
+	//Berechnen des Ergebnisses
+  var ZwErgebnisZeit2 = (9.81*Zeit);
+  //Runden auf 3 Stellen nachdem Komma
+  var Ergebnis2=ZwErgebnisZeit2.toFixed(3);
+  //Wertübergabe
+  return Ergebnis2;
+}
+
+function SchreibeErgebnis2 (Ergebnis2) {
+	//Wert wird übernommen und in Dokumentenfeld übernommen
+  var Wert2 = ZeitErgebnis2(Ergebnis2);
+  document.Zeit.Ergebnisfeldv.value = Wert2;
+}
+</script>
+	</head>
+
+<body>
+<p align='justify'>Hier ist die Strecke gegeben und man kann die Zeit (links) und die Geschwindigkeit (rechts) berechnen.</p>
+<a href="strecke.html" target="_self">Strecke gegeben</a> | <a href="geschwindigkeit.html" target="_self">Geschwindigkeit gegeben</a> | <a href="zeit.html" target="_self">Zeit gegeben</a>
+<form name="Zeit" action="">
+<table border="0" bordercolor="FFCC00" style="background-color:FFFFCC" width="500" cellpadding="3" cellspacing="3">
+	<tr>
+		<td>Strecke (s)=<input type="text" name="StreckeEingabe">m</td>
+		<td>Zeit (t)=<input type="text" name="StreckeEingabe2">s</td>
+	</tr>
+		<tr>
+		<td><input type="button" value="Zeit berechnen"
+onclick="SchreibeErgebnis(document.Zeit.StreckeEingabe.value)"></td>
+		<td><input type="button" value="Geschwindigkeit berechnen"
+onclick="SchreibeErgebnis2(document.Zeit.StreckeEingabe2.value)"></td>
+	</tr>
+	<tr>
+		
+		<td><pre>
+Ergebnis für t: <br/> <input type="text" name="Ergebnisfeldt">s</pre></td>
+<td><pre>
+Ergebnis für v: <br/> <input type="text" name="Ergebnisfeldv">m</pre></td>
+	</tr>
+</table>
+
+</form>
+</body>
+</html>
